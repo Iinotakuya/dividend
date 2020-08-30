@@ -7,6 +7,6 @@
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class=text_complete>
-        <h1>投稿が完了しました。</h1>
+        <h1>投稿が完了しました</h1>
     </div>
 @endsection
