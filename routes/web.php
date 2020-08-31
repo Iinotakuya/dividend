@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 
 Route::get('/dividend', 'Admin\DividendController@index');
+Route::get('/dividend/indexlist', 'Admin\DividendController@indexlist');
 
 Route::group(['prefix' => 'admin'], function() {
     //http://XXXXXX.jp/admin/devidend/create にアクセスが来たら、Controller Admin\DividendController のAction addに渡す

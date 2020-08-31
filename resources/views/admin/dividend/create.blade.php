@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <label for="industry">業種</label>
-                <select required>
+                <select required  name="Industry">
                     <option value="hidden"></option>
                     <option value="1">水産・農林業</option>
                     <option value="2">鉱業</option>
@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <label for="detail">詳細内容</label>
-                <textarea id="detail" name="detail" cols="70" rows="10"></textarea>
+                <textarea name="detail" cols="70" rows="10"></textarea>
             </div>
         </div>
         <div class="row">
@@ -84,6 +84,7 @@
             </div>
         </div>
         <div class="button_create">
+            {{ csrf_field() }}
             <button type="button" onclick="location.href='https://ea3a1b2f21e346fcaa528e68fb471371.vfs.cloud9.us-east-2.amazonaws.com/admin/dividend/complete'">投稿</button>
             
         </div>

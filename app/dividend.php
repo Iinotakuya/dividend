@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class dividend extends Model
+class Dividend extends Model
 {
     protected $guarded = array('id');
 
