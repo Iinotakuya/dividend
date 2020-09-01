@@ -85,8 +85,8 @@
         </div>
         <div class="button_create">
             {{ csrf_field() }}
-            <button type="button" onclick="location.href='https://ea3a1b2f21e346fcaa528e68fb471371.vfs.cloud9.us-east-2.amazonaws.com/admin/dividend/complete'">投稿</button>
-            
+            <input type="submit" value="投稿" onclick="location.href='location.href='https://ea3a1b2f21e346fcaa528e68fb471371.vfs.cloud9.us-east-2.amazonaws.com/admin/dividend/complete'">
+            </form>
         </div>
     </div>
 @endsection
