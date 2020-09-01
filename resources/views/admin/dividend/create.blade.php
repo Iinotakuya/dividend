@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-10 mx-auto">
                 <h3>新規投稿</h3>
-                <form action="{{ action('Admin\DividendController@create') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('Admin\DividendController@complete') }}" method="post" enctype="multipart/form-data">
                     
                     @if (count($errors) > 0)
                         <ul>
@@ -85,7 +85,7 @@
         </div>
         <div class="button_create">
             {{ csrf_field() }}
-            <input type="submit" value="投稿" onclick="location.href='location.href='https://ea3a1b2f21e346fcaa528e68fb471371.vfs.cloud9.us-east-2.amazonaws.com/admin/dividend/complete'">
+            <input type="submit" value="投稿">
             </form>
         </div>
     </div>
