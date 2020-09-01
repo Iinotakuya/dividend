@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-md-10 mx-auto">
                 <h3>新規投稿</h3>
-                <form action="{{ action('Admin\DividendController@complete') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ action('Admin\DividendController@create') }}" method="post" enctype="multipart/form-data">
                     
                     @if (count($errors) > 0)
                         <ul>

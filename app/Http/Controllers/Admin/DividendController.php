@@ -50,7 +50,7 @@ class DividendController extends Controller
     $dividend->fill($form);
     $dividend->save();
         
-        return redirect('admin/dividend/complete');
+        return redirect('admin/dividend/create');
     }
     
    public function indexlist(Request $request)
