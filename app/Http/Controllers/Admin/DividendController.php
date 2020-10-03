@@ -12,10 +12,13 @@ class DividendController extends Controller
     //TOP画面を表示するメソッド
     public function index()
     {
-     //admin/devidendディレクトリ配下のindex.blade.phpファイルを呼び出す    
-     return view('admin.dividend.index');   
-    }
     
+    // すべてのデータを取得する
+        $posts = Dividend::all();
+
+        return view('admin.dividend.index', ['posts' => $posts]);
+    } 
+  
     //新規作成画面を表示するメソッド
     public function add()
     {
@@ -53,13 +56,30 @@ class DividendController extends Controller
         return redirect('admin/dividend/create');
     }
     
-   public function indexlist(Request $request)
-  {
-    // すべてのニュースを取得する
-        $posts = Dividend::all();
+    public function indexlist(Request $request)
+    {
+        $dividend_title = $request->dividend_title;
+      if ($dividend_title != '') {
+          // 検索されたら検索結果を取得する companyはカラム
+          $dividends = Dividend::where('company', 'like', "%$dividend_title%")->get();
+      } else {
+          // それ以外はすべてのニュースを取得する
+          $dividends = Dividend::all();
+      }
 
-        return view('admin.dividend.indexlist', ['posts' => $posts]);
-  } 
+        return view('admin.dividend.indexlist', ['dividends' => $dividends]);
+    }
+    
+    //投稿の詳細内容表示
+    public function show(Request $request)
+    {
+        $this->validate($request, Dividend::$rules);
+        $dividends = Dividend::find($request->id);
+        if (empty($dividends)) {
+          abort(404);
+        }
+        return view('admin.dividend.show', ['dividend_form' => $dividends]);
+    }
     
     //投稿完了を表示する画面　admin/devidendディレクトリ配下のcomplete.blade.phpファイルを呼び出す
     public function complete()

@@ -6,6 +6,30 @@
 
 @section('content')
     <div class="container">
+         <div class="row">
+            <div class="list-dividend col-md-12 mx-auto">
+                <div class="row">
+                    <table class="table table-white">
+                        <thead>
+                            <tr>
+                                <th width="30%">会社名・銘柄コード</th>
+                                <th width="20%">業種</th>
+                                <th width="50%">詳細内容</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($dividends as $dividend)
+                                <tr>
+                                    <th>{{ $dividend->company }}</th>
+                                    <td>{{ \Str::limit($dividend->Industry, 100) }}</td>
+                                    <td>{{ \Str::limit($dividend->detail, 250) }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-2 mx-auto">
                 <h2>銘柄検索</h2>
@@ -23,106 +47,57 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <a href="#">水産・農林業</a>
-                <a href="#">鉱業</a>
-                <a href="#">建設業</a>
-                <a href="#">食料品</a>
-            </div>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">水産・農林業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">鉱業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">建設業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">食料品</a>
         </div>
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <a href="#">繊維製品</a>
-                <a href="#">パルプ・紙</a>
-                <a href="#">化学</a>
-                <a href="#">医薬品</a>
-            </div>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">繊維製品</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">パルプ・紙</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">化学</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">医薬品</a>
         </div>
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <a href="#">石油・石炭製品</a>
-                <a href="#">ゴム製品</a>
-                <a href="#">ガラス・土石製品</a>
-                <a href="#">鉄鋼</a>
-            </div>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">石油・石炭製品</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">ゴム製品</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">ガラス・土石製品</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">鉄鋼</a>
         </div>
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <a href="#">非鉄金属</a>
-                <a href="#">金属製品</a>
-                <a href="#">機械</a>
-                <a href="#">電気機器</a>
-            </div>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">非鉄金属</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">金属製品</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">機械</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">電気機器</a>
         </div>
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <a href="#">輸送用機器</a>
-                <a href="#">精密機器</a>
-                <a href="#">その他製品</a>
-                <a href="#">電気・ガス業</a>
-            </div>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">輸送用機器</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">精密機器</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">その他製品</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">電気・ガス業</a>
         </div>
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <a href="#">陸運業</a>
-                <a href="#">海運業</a>
-                <a href="#">空運業</a>
-                <a href="#">倉庫・運輸関連業</a>
-            </div>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">陸運業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">海運業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">空運業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">倉庫・運輸関連業</a>
         </div>
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <a href="#">情報・通信業</a>
-                <a href="#">卸売業</a>
-                <a href="#">小売業</a>
-                <a href="#">銀行業</a>
-            </div>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">情報・通信業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">卸売業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">小売業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">銀行業</a>
         </div>
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <a href="#">証券・商品先物取引業</a>
-                <a href="#">保険業</a>
-                <a href="#">その他金融業</a>
-                <a href="#">不動産業</a>
-            </div>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">証券・商品先物取引業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">保険業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">その他金融業</a>
+            <a href="#" class="btn btn-outline-dark col-md-3 mx-auto">不動産業</a>
         </div>
         <div class="row">
-            <div class="col-md-3 mx-auto">
-                <a href="#">サービス業</a>
-                <a href="#">REIT</a>
-                <a href="#">その他</a>
-            </div>
+            <a href="#"　class="btn btn-outline-dark col-md-4 mx-auto">サービス業</a>
+            <a href="#"　class="btn btn-outline-dark col-md-4 mx-auto">REIT</a>
+            <a href="#"　class="btn btn-outline-dark col-md-4 mx-auto">その他</a>
         </div>
-        <div class="row">
-            <div class="col-md-2 mx-auto">
-                <h2>新着投稿</h2>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="list-news col-md-12 mx-auto">
-                <div class="row">
-                    <table class="table table-dark">
-                        <thead>
-                            <tr>
-                                <th width="10%">ID</th>
-                                <th width="20%">タイトル</th>
-                                <th width="50%">本文</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($posts as $dividend)
-                                <tr>
-                                    <th>{{ $dividend->company }}</th>
-                                    <td>{{ \Str::limit($dividend->Industry, 100) }}</td>
-                                    <td>{{ \Str::limit($dividend->detail, 250) }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        
     </div>
 @endsection
