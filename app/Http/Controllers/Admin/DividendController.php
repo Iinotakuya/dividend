@@ -73,12 +73,11 @@ class DividendController extends Controller
     //投稿の詳細内容表示
     public function show(Request $request)
     {
-        $this->validate($request, Dividend::$rules);
-        $dividends = Dividend::find($request->id);
-        if (empty($dividends)) {
+        $dividend = Dividend::find($request->id);
+        if (empty($dividend)) {
           abort(404);
         }
-        return view('admin.dividend.show', ['dividend_form' => $dividends]);
+        return view('admin.dividend.show', ['dividend_form' => $dividend]);
     }
     
     //投稿完了を表示する画面　admin/devidendディレクトリ配下のcomplete.blade.phpファイルを呼び出す
