@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
                             </div>
-
+                            
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
@@ -59,15 +59,13 @@
                             </div>
                         </form>
                         
-                        <form method="POST" action="{{ route('register') }}">
-                            @csrf
-                            <div class="text-center">
-                                <p>初めてご利用の方</p>
-                                <button type="submit" class="btn btn-primary mb-2">
-                                    {{ __('messages.user register') }}    
-                                </button>
-                            </div>
-                        </form>
+                        <div class="text-center">
+                            <p>初めてご利用の方</p>
+                            <a class="btn btn-primary mb-2" href="{{ route('register') }}">
+                                {{ __('messages.user register') }}
+                            </a>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

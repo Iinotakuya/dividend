@@ -15,7 +15,8 @@ class DividendController extends Controller
     {
     
     // すべてのデータを取得する
-    $posts = Dividend::all();
+    $posts = Dividend::all()->orderBy('id', 'asc')->get();
+    
 
         return view('admin.dividend.index', ['posts' => $posts]);
     } 
@@ -54,7 +55,7 @@ class DividendController extends Controller
     $dividend->fill($form);
     $dividend->save();
         
-        return redirect('admin/dividend/create');
+        return redirect('admin/dividend/complete');
     }
     
     public function indexlist(Request $request)

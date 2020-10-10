@@ -82,10 +82,10 @@
                         <input type="file" class="form-control-file" name="image">
                     </div>
                 </div>
-                    <div class="button_create">
+                <div class="text-center">
                     {{ csrf_field() }}
-                        <button onclick="https://ea3a1b2f21e346fcaa528e68fb471371.vfs.cloud9.us-east-2.amazonaws.com/admin/dividend/complete">投稿</button>
-                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">投稿完了</button>
+                </div>
                 </form>
             </div>
         </div>
