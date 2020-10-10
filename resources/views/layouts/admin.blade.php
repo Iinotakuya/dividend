@@ -76,11 +76,10 @@
             {{-- ここまでナビゲーションバー --}}
             <div class="container">
                 <div class="row">
-                    <a href="https://ea3a1b2f21e346fcaa528e68fb471371.vfs.cloud9.us-east-2.amazonaws.com/register">ユーザー登録</a>
-                    <a href="https://ea3a1b2f21e346fcaa528e68fb471371.vfs.cloud9.us-east-2.amazonaws.com/login">ログイン</a>
+                    <a href="{{ route('register') }}">ユーザー登録</a>
                 </div>
                 <div class="row">
-                    <a href="https://ea3a1b2f21e346fcaa528e68fb471371.vfs.cloud9.us-east-2.amazonaws.com/dividend">TOP</a>
+                    <a href="https://ea3a1b2f21e346fcaa528e68fb471371.vfs.cloud9.us-east-2.amazonaws.com">TOP</a>
                     <a href="https://ea3a1b2f21e346fcaa528e68fb471371.vfs.cloud9.us-east-2.amazonaws.com/admin/dividend/create">投稿画面</a>
                 </div>
             </div>

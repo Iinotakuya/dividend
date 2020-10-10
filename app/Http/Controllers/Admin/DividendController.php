@@ -5,16 +5,17 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Dividend;
+use Illuminate\Support\Facades\Auth;
 
 class DividendController extends Controller
 {
-    
+
     //TOP画面を表示するメソッド
     public function index()
     {
     
     // すべてのデータを取得する
-        $posts = Dividend::all();
+    $posts = Dividend::all();
 
         return view('admin.dividend.index', ['posts' => $posts]);
     } 
@@ -22,14 +23,14 @@ class DividendController extends Controller
     //新規作成画面を表示するメソッド
     public function add()
     {
-      //admin/devidendディレクトリ配下のcreate.blade.phpファイルを呼び出す
-      return view('admin.dividend.create');
+        //admin/devidendディレクトリ配下のcreate.blade.phpファイルを呼び出す
+        return view('admin.dividend.create');
     }
     
     //新規作成画面で入力した内容をDBへ保存するメソッド admin/devidendディレクトリ配下のcreate.blade.phpファイルを呼び出す
     public function create(Request $request)
     {
-        
+
     // Varidationを行う
     $this->validate($request, Dividend::$rules);
         
@@ -59,14 +60,23 @@ class DividendController extends Controller
     public function indexlist(Request $request)
     {
         $dividend_title = $request->dividend_title;
-      if ($dividend_title != '') {
-          // 検索されたら検索結果を取得する companyはカラム
-          $dividends = Dividend::where('company', 'like', "%$dividend_title%")->get();
-      } else {
-          // それ以外はすべてのニュースを取得する
-          $dividends = Dividend::all();
-      }
+            if ($dividend_title != '') {
+                // 検索されたら検索結果を取得する companyはカラム
+                $dividends = Dividend::where('company', 'like', "%$dividend_title%")->get();
+            } else {
+                // それ以外はすべてのニュースを取得する
+                $dividends = Dividend::all();
+            }
 
+        return view('admin.dividend.indexlist', ['dividends' => $dividends]);
+    }
+    
+    //業種検索
+     public function category(Request $request)
+    {
+        $dividend_category = $request->dividend_category;
+        $dividends = Dividend::where('Industry', $dividend_category)->get();
+        
         return view('admin.dividend.indexlist', ['dividends' => $dividends]);
     }
     
@@ -74,8 +84,8 @@ class DividendController extends Controller
     public function show(Request $request)
     {
         $dividend = Dividend::find($request->id);
-        if (empty($dividend)) {
-          abort(404);
+            if (empty($dividend)) {
+            abort(404);
         }
         return view('admin.dividend.show', ['dividend_form' => $dividend]);
     }

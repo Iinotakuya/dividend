@@ -58,6 +58,16 @@
                                 </div>
                             </div>
                         </form>
+                        
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <div class="text-center">
+                                <p>初めてご利用の方</p>
+                                <button type="submit" class="btn btn-primary mb-2">
+                                    {{ __('messages.user register') }}    
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
