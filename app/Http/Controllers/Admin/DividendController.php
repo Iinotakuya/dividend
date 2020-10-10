@@ -15,7 +15,7 @@ class DividendController extends Controller
     {
     
     // すべてのデータを取得する
-    $posts = Dividend::all()->orderBy('id', 'asc')->get();
+    $posts = Dividend::all()->orderBy('id')->get();
     
 
         return view('admin.dividend.index', ['posts' => $posts]);
