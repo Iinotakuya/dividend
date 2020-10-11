@@ -15,7 +15,7 @@ class DividendController extends Controller
     {
     
     // すべてのデータを取得.投稿順に並び替え
-    $posts = Dividend::all()->sortByDesc('id');
+    $posts = Dividend::all()->sortByDesc('id')->paginate(5);
     
 
         return view('admin.dividend.index', ['posts' => $posts]);
