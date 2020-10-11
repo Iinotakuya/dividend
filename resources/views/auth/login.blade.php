@@ -49,22 +49,17 @@
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        {{ __('messages.Login') }}
-                                    </button>
-                                </div>
+                        
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('messages.Login') }}
+                                </button>
+                                <p>初めてご利用の方</p>
+                                <a class="btn btn-primary mb-2" href="{{ route('register') }}">
+                                    {{ __('messages.user register') }}
+                                </a>
                             </div>
                         </form>
-                        
-                        <div class="text-center">
-                            <p>初めてご利用の方</p>
-                            <a class="btn btn-primary mb-2" href="{{ route('register') }}">
-                                {{ __('messages.user register') }}
-                            </a>
-                        </div>
                         
                     </div>
                 </div>

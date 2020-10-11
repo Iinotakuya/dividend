@@ -87,7 +87,6 @@
             <a href="{{ action('Admin\DividendController@category', ['dividend_category' => "空運業"]) }}" class="btn btn-outline-dark col-md-3 mx-auto">空運業</a>
             <a href="{{ action('Admin\DividendController@category', ['dividend_category' => "倉庫・運輸関連業"]) }}" class="btn btn-outline-dark col-md-3 mx-auto">倉庫・運輸関連業</a>
         </div>
-        </div>
         <div class="row">
             <a href="{{ action('Admin\DividendController@category', ['dividend_category' => "情報・通信業"]) }}" class="btn btn-outline-dark col-md-3 mx-auto">情報・通信業</a>
             <a href="{{ action('Admin\DividendController@category', ['dividend_category' => "卸売業"]) }}" class="btn btn-outline-dark col-md-3 mx-auto">卸売業</a>

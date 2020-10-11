@@ -23,8 +23,14 @@
 
                 <div class="row">
                     <div class="col-md-9 mx-auto">
-                        <label for="company">会社名・銘柄コード</label>
-                        <input type="text" name="company" size="50" placeholder="日本取引所グループ(2602)">
+                        <div class="row">
+                            <div class="col-md-3 mx-auto">
+                                <label for="company">会社名・銘柄コード</label>
+                            </div>
+                            <div class="col-md-6 mx-auto">
+                                <input type="text" name="company" size="50" placeholder="日本取引所グループ(2602)">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
