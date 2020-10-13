@@ -3,10 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Dividend extends Model
 {
     protected $guarded = array('id');
+    
+    
+    use Sortable; 
+    public $sortable = ['company', 'Industry', 'detail'];
 
     public static $rules = array(
         'company' => 'required',
