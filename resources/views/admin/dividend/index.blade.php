@@ -103,24 +103,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <table class = "table">
-                        <thead>
-                            <tr>
-                                <td>@sortablelink('company', '会社名')
-                                <td>@sortablelink('Industry', '業種')
-                                <td>@sortablelink('detail', '詳細')
-                            </tr>
-                        </thead>
-                            @foreach($posts as $dividend)
-                        <tbody>
-                            <tr>
-                                <td>{{ $dividend->company }}
-                                <td>{{ $dividend->Industry }}
-                                <td>{{ $dividend->detail }}
-                            </tr>
-                        </tbody>
-                            @endforeach
-                    </table>
+                    {{-- ページネーション --}}
                     {{ $posts->appends(request()->query())->links() }}
                 </div>
             </div>
