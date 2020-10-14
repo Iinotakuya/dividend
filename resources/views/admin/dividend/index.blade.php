@@ -111,7 +111,7 @@
                                 <td>@sortablelink('detail', '詳細')
                             </tr>
                         </thead>
-                            @foreach($dividends as $dividend)
+                            @foreach($posts as $dividend)
                         <tbody>
                             <tr>
                                 <td>{{ $dividend->company }}
@@ -121,7 +121,7 @@
                         </tbody>
                             @endforeach
                     </table>
-                    {{ $posts->links->appends(request()->query())->links() }}
+                    {{ $posts->appends(request()->query())->links() }}
                 </div>
             </div>
         </div>
