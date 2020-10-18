@@ -14,11 +14,8 @@ class DividendController extends Controller
     public function index()
     {
     
-    // すべてのデータを取得.投稿順に並び替え
+    // すべてのデータを取得.降順に並び替え.ページネーション
     $posts = Dividend::sortable()->paginate(5);
-    
-    
-    
 
         return view('admin.dividend.index', ['posts' => $posts]);
     } 
@@ -91,6 +88,14 @@ class DividendController extends Controller
             abort(404);
         }
         return view('admin.dividend.show', ['dividend_form' => $dividend]);
+    }
+    
+    //mypageを表示
+    public function mypage()
+    {
+    $posts = Dividend::sortable()->paginate(5);
+    
+        return view('admin.dividend.mypage', ['posts' => $posts]);
     }
     
     //投稿完了を表示する画面　admin/devidendディレクトリ配下のcomplete.blade.phpファイルを呼び出す
