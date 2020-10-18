@@ -18,4 +18,10 @@ class Dividend extends Model
         'Industry' => 'required',
         'detail' => 'required',
     );
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    
 }

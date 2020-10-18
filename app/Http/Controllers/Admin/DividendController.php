@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Dividend;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class DividendController extends Controller
@@ -44,6 +45,8 @@ class DividendController extends Controller
     } else {
         $dividend->image_path = null;
     }
+    
+    $dividend->user_id = $request->user()->id;
     
     // フォームから送信されてきた_tokenを削除する
     unset($form['_token']);
@@ -91,9 +94,11 @@ class DividendController extends Controller
     }
     
     //mypageを表示
-    public function mypage()
+    public function mypage(Request $request)
     {
-    $posts = Dividend::sortable()->paginate(5);
+    
+    $user = User::find($request->id);
+    $posts = Dividend::where('user_id',$user->id)->sortable()->paginate(5);
     
         return view('admin.dividend.mypage', ['posts' => $posts]);
     }

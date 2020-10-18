@@ -57,7 +57,7 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('mypage') }}">
+                                    <a class="dropdown-item" href="{{ route('mypage', auth()->user()->id) }}">
                                         {{ __('マイページ') }}
                                     </a>
                                     
