@@ -28,7 +28,7 @@
                                     <td>{{ \Str::limit($dividend->detail, 250) }}</td>
                                     <td>
                                         <div>
-                                            <a href="{{ action('Admin\DividendController@delete',['id' => $dividend->id]) }}">削除</a>
+                                            <a href="{{ action('Admin\DividendController@delete', ['id' => $dividend->id]) }}">削除</a>
                                         </div>
                                     </td>
                                 </tr>

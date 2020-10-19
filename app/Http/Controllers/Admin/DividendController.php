@@ -15,6 +15,14 @@ class DividendController extends Controller
     public function index()
     {
     
+    $user = User::all();
+    dd($user);
+
+    return response()->json([
+        'user' => $user
+    ]);
+    
+    
     // すべてのデータを取得.降順に並び替え.ページネーション
     $posts = Dividend::orderBy('id','desc')->paginate(5);
     //$posts = Dividend::sortable()->paginate(5);
@@ -115,6 +123,7 @@ class DividendController extends Controller
     {
         $dividend = Dividend::find($request->id);
         $dividend->delete();
+        
         return rediret('admin/dividend/mypage');
     }
 }
