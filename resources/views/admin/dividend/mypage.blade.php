@@ -26,6 +26,11 @@
                                     <th><a href="{{ action('Admin\DividendController@show', ['id' => $dividend->id]) }}">{{ $dividend->company }}</a></th>
                                     <td>{{ \Str::limit($dividend->Industry, 100) }}</td>
                                     <td>{{ \Str::limit($dividend->detail, 250) }}</td>
+                                    <td>
+                                        <div>
+                                            <a href="{{ action('Admin\DividendController@delete',['id' => $dividend->id]) }}">削除</a>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

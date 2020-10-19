@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('', 'Admin\DividendController@index');
+Route::get('', 'Admin\DividendController@index')->name('TOP');
 Route::get('/dividend/indexlist', 'Admin\DividendController@indexlist');
 Route::post('/dividend/indexlist', 'Admin\DividendController@indexlist');
 Route::get('/dividend/category', 'Admin\DividendController@category');
@@ -27,9 +27,10 @@ Route::get('/dividend/show', 'Admin\DividendController@show');
 Route::group(['prefix' => 'admin'], function() {
     //http://XXXXXX.jp/admin/devidend/create にアクセスが来たら、Controller Admin\DividendController のAction addに渡す
     Route::get('dividend/create', 'Admin\DividendController@add')->middleware('auth');
-    Route::post('dividend/create', 'Admin\DividendController@create');
+    Route::post('dividend/create', 'Admin\DividendController@create')->name('create');
     Route::get('dividend/complete', 'Admin\DividendController@complete');
     Route::get('dividend/mypage/{id}', 'Admin\DividendController@mypage')->name('mypage');
+    Route::get('dividend/mypage/delete','Admin\DividendController@delete')->middleware('auth');
     
 });
 Auth::routes();

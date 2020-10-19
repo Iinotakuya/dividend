@@ -16,7 +16,8 @@ class DividendController extends Controller
     {
     
     // すべてのデータを取得.降順に並び替え.ページネーション
-    $posts = Dividend::sortable()->paginate(5);
+    $posts = Dividend::orderBy('id','desc')->paginate(5);
+    //$posts = Dividend::sortable()->paginate(5);
 
         return view('admin.dividend.index', ['posts' => $posts]);
     } 
@@ -98,7 +99,7 @@ class DividendController extends Controller
     {
     
     $user = User::find($request->id);
-    $posts = Dividend::where('user_id',$user->id)->sortable()->paginate(5);
+    $posts = Dividend::where('user_id',$user->id)->orderBy('id','desc')->paginate(5);
     
         return view('admin.dividend.mypage', ['posts' => $posts]);
     }
@@ -109,15 +110,11 @@ class DividendController extends Controller
         return view('admin.dividend.complete');
     }
     
-    //更新画面を表示するメソッド
-    public function edit()
+    //投稿データ削除
+    public function delete(Request $request)
     {
-        return view('admin.dividend.edit');
-    }
-
-    //更新画面で入力した内容でDBの情報を更新するメソッド
-    public function update()
-    {
-        return redirect('admin/dividend/edit');
+        $dividend = Dividend::find($request->id);
+        $dividend->delete();
+        return rediret('admin/dividend/mypage');
     }
 }
