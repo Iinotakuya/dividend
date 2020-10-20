@@ -29,8 +29,9 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('dividend/create', 'Admin\DividendController@add')->middleware('auth');
     Route::post('dividend/create', 'Admin\DividendController@create')->name('create');
     Route::get('dividend/complete', 'Admin\DividendController@complete');
-    Route::get('dividend/mypage/{id}', 'Admin\DividendController@mypage')->name('mypage');
     Route::get('dividend/mypage/delete','Admin\DividendController@delete')->middleware('auth');
+    Route::get('dividend/mypage/{id}', 'Admin\DividendController@mypage')->name('mypage');
+    
     
 });
 Auth::routes();
