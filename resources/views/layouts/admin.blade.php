@@ -72,16 +72,18 @@
                                     </form>
                                 </div>
                             </li>
-                            @endguest
+                        @endguest
                         </ul>
                     </div>
                 </div>
             </nav>
             {{-- ここまでナビゲーションバー --}}
             <div class="container">
+                @guest
                 <div class="row">
                     <a href="{{ route('register') }}">ユーザー登録</a>
                 </div>
+                @endguest
                 <div class="row">
                     <a href="{{ route('TOP') }}">TOP</a>
                     <a href="{{ route('create') }}">投稿画面</a>

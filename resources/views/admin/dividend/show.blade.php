@@ -7,7 +7,7 @@
     <div class="container">
         <div class="form-group row">
             <label for="company" class="col-md-3 col-form-label text-md-right">会社名・銘柄コード</label>
-            <div class="col-md-9 mx-auto">
+            <div class="col-md-6 mx-left">
                 <input type="text" name="company" size="50" class="form-control" value="{{ $dividend_form->company }}" readonly>
             </div>
         </div>

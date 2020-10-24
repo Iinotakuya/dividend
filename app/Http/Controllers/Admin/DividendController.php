@@ -106,8 +106,8 @@ class DividendController extends Controller
     public function mypage(Request $request)
     {
     
-    $user = User::find($request->id);
-    $posts = Dividend::where('user_id',$user->id)->orderBy('id','desc')->paginate(5);
+        $user = User::find($request->id);
+        $posts = Dividend::where('user_id',$user->id)->orderBy('id','desc')->paginate(5);
     
         return view('admin.dividend.mypage', ['posts' => $posts]);
     }
@@ -118,6 +118,42 @@ class DividendController extends Controller
         return view('admin.dividend.complete');
     }
     
+    public function edit(Request $request)
+    {
+    
+        $dividend = Dividend::find($request->id);
+        if (empty($dividend)) {
+            abort(404);
+        }
+        
+        return view('admin/dividend/edit',['dividend' => $dividend]);
+    }
+    
+    public function update(Request $request)
+  {
+        // Validationをかける
+        $this->validate($request, Dividend::$rules);
+        // Dividend Modelからデータを取得する
+        $dividend = Dividend::find($request->id);
+        // 送信されてきたフォームデータを格納する
+        $dividend_form = $request->all();
+        if ($request->remove == 'true') {
+            $dividend_form['image_path'] = null;
+    } elseif ($request->file('image')) {
+            $path = $request->file('image')->store('public/image');
+            $dividend_form['image_path'] = basename($path);
+    } else {
+            $dividend_form['image_path'] = $dividend->image_path;
+    }
+
+      unset($dividend_form['image']);
+      unset($dividend_form['remove']);
+      unset($dividend_form['_token']);
+      // 該当するデータを上書きして保存する
+      $dividend->fill($dividend_form)->save();
+      return redirect('admin/dividend/edit',['dividend' => $dividend]);
+  }
+    
     //投稿データ削除
     public function delete(Request $request)
     {
@@ -125,6 +161,6 @@ class DividendController extends Controller
         $dividend->delete();
         
         
-        return redirect('admin/dividend/mypage');
+        return redirect('admin/dividend/mypage/1');
     }
 }
