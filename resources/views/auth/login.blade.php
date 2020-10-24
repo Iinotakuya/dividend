@@ -54,7 +54,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('messages.Login') }}
                                 </button>
-                                <p>初めてご利用の方</p>
+                                <p class= "login_first">初めてご利用の方</p>
                                 <a class="btn btn-primary mb-2" href="{{ route('register') }}">
                                     {{ __('messages.user register') }}
                                 </a>

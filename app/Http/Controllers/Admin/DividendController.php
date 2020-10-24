@@ -124,6 +124,7 @@ class DividendController extends Controller
         $dividend = Dividend::find($request->id);
         $dividend->delete();
         
+        
         return redirect('admin/dividend/mypage');
     }
 }

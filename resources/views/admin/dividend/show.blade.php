@@ -5,22 +5,24 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <label class="col-md-2" for="company">会社名・銘柄コード</label>
-            <div class="col-md-10">
-                <input type="text" class="form-control" name="company" value="{{ $dividend_form->company }}" readonly>
+        <div class="form-group row">
+            <label for="company" class="col-md-3 col-form-label text-md-right">会社名・銘柄コード</label>
+            <div class="col-md-9 mx-auto">
+                <input type="text" name="company" size="50" class="form-control" value="{{ $dividend_form->company }}" readonly>
             </div>
         </div>
-        <div class="row">
-            <label class="col-md-2" for="Industry">業種</label>
-            <div class="col-md-10">
-                <input type="text" class="form-control" name="Industry" value="{{ $dividend_form->Industry }}" readonly>
+        
+        <div class="form-group row">
+            <label for="Industry" class="col-md-3 col-form-label text-md-right">業種</label>
+            <div class="col-md-9 mx-auto">
+                <input type="text" name="Industry"  class="form-control" value="{{ $dividend_form->Industry }}" readonly>
             </div>
         </div>
-        <div class="row">
-            <label class="col-md-2" for="detail">詳細内容</label>
-            <div class="col-md-10">
-                <textarea class="form-control" name="detail" readonly rows="20">{{ $dividend_form->detail }}</textarea>
+        
+        <div class="form-group row">
+            <label for="detail" class="col-md-3 col-form-label text-md-right">詳細内容</label>
+            <div class="col-md-9 mx-auto">
+                <textarea name="detail" class="form-control" readonly rows="10">{{ $dividend_form->detail }}</textarea>
             </div>
         </div>
     </div>

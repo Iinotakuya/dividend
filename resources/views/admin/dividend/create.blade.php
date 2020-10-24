@@ -21,21 +21,16 @@
                         </ul>
                     @endif
 
-                <div class="row">
+                <div class="form-group row">
+                    <label for="company" class="col-md-3 col-form-label text-md-right">会社名・銘柄コード</label>
                     <div class="col-md-9 mx-auto">
-                        <div class="row">
-                            <div class="col-md-3 mx-auto">
-                                <label for="company">会社名・銘柄コード</label>
-                            </div>
-                            <div class="col-md-6 mx-auto">
-                                <input type="text" name="company" size="50" placeholder="日本取引所グループ(2602)">
-                            </div>
-                        </div>
+                        <input type="text" name="company" size="50" placeholder="日本取引所グループ(2602)">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-9 mx-auto">
-                        <label for="industry">業種</label>
+                
+                <div class="form-group row">
+                    <label for="Industry" class="col-md-3 col-form-label text-md-right">業種</label>
+                        <div class="col-md-9 mx-auto">
                         <select required  name="Industry">
                             <option value="hidden"></option>
                             <option value="水産・農林業">水産・農林業</option>
@@ -76,18 +71,21 @@
                         </select>
                     </div>
                 </div>
-                <div class="row">
+                
+                <div class="form-group row">
+                    <label for="detail" class="col-md-3 col-form-label text-md-right">詳細内容</label>
                     <div class="col-md-9 mx-auto">
-                        <label for="detail">詳細内容</label>
-                        <textarea name="detail" cols="60" rows="10"></textarea>
+                        <textarea name="detail" cols="50" rows="10"></textarea>
                     </div>
                 </div>
-                <div class="row">
+                
+                <div class="form-group row">
+                    <label for="image" class="col-md-3 col-form-label text-md-right">画像</label>
                     <div class="col-md-9 mx-auto">
-                        <label for="image">画像</label>
                         <input type="file" class="form-control-file" name="image">
                     </div>
                 </div>
+                
                 <div class="text-center">
                     {{ csrf_field() }}
                     <button type="submit" class="btn btn-primary mb-2">投稿完了</button>
