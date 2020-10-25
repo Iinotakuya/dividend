@@ -13,8 +13,8 @@
             </div>
         </div>
         <form class="form-inline" action="{{ action('Admin\DividendController@indexlist') }}" method="post" enctype="multipart/form-data">
-            <div class="form-group mx-sm-3 mb-2">
-                <input type="text" class="form-control" name="dividend_title"  size="120"  placeholder="会社名・銘柄コード">
+            <div class="form-group mx-sm-6 mb-2">
+                <input type="text" class="form-control" name="dividend_title"  size="130"  placeholder="会社名・銘柄コード">
             </div>
                 {{ csrf_field() }}
                 <button type="submit" class="btn btn-primary mb-2">検索</button>
@@ -90,7 +90,7 @@
                             <tr>
                                 <th width="30%">会社名・銘柄コード</th>
                                 <th width="20%">業種</th>
-                                <th width="50%">詳細内容</th>
+                                <th width="40%">詳細内容</th>
                             </tr>
                         </thead>
                         <tbody>

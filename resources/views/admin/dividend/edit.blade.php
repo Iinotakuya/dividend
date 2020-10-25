@@ -1,17 +1,16 @@
 {{-- layouts/admin.blade.phpを読み込む --}}
 @extends('layouts.admin')
 
-
 {{-- admin.blade.phpの@yield('title')に'新規投稿を行う'を埋め込む --}}
-@section('title', '新規投稿')
+@section('title', '投稿編集')
 
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-10 mx-auto">
-                <h3>新規投稿</h3>
-                <form action="{{ action('Admin\DividendController@create') }}" method="post" enctype="multipart/form-data">
+                <h3>投稿編集</h3>
+                <form action="{{ action('Admin\DividendController@update') }}" method="post" enctype="multipart/form-data">
                     
                     @if (count($errors) > 0)
                         <ul>
@@ -24,7 +23,7 @@
                 <div class="form-group row">
                     <label for="company" class="col-md-3 col-form-label text-md-right">会社名・銘柄コード</label>
                     <div class="col-md-9 mx-auto">
-                        <input type="text" name="company" size="50" placeholder="日本取引所グループ(2602)">
+                        <input type="text" name="company" size="50" value="{{ $dividend_form->company }}">
                     </div>
                 </div>
                 
@@ -75,7 +74,7 @@
                 <div class="form-group row">
                     <label for="detail" class="col-md-3 col-form-label text-md-right">詳細内容</label>
                     <div class="col-md-9 mx-auto">
-                        <textarea name="detail" cols="50" rows="10"></textarea>
+                        <textarea name="detail" cols="50" rows="10">{{ $dividend_form->detail }}</textarea>
                     </div>
                 </div>
                 

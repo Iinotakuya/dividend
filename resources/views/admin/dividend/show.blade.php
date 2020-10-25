@@ -6,23 +6,30 @@
 @section('content')
     <div class="container">
         <div class="form-group row">
-            <label for="company" class="col-md-3 col-form-label text-md-right">会社名・銘柄コード</label>
-            <div class="col-md-6 mx-left">
+            <label for="company" class="col-md-4 col-form-label text-md-right">会社名・銘柄コード</label>
+            <div class="col-md-5 mx-left">
                 <input type="text" name="company" size="50" class="form-control" value="{{ $dividend_form->company }}" readonly>
             </div>
         </div>
         
         <div class="form-group row">
-            <label for="Industry" class="col-md-3 col-form-label text-md-right">業種</label>
-            <div class="col-md-9 mx-auto">
+            <label for="Industry" class="col-md-4 col-form-label text-md-right">業種</label>
+            <div class="col-md-5 mx-left">
                 <input type="text" name="Industry"  class="form-control" value="{{ $dividend_form->Industry }}" readonly>
             </div>
         </div>
         
         <div class="form-group row">
-            <label for="detail" class="col-md-3 col-form-label text-md-right">詳細内容</label>
-            <div class="col-md-9 mx-auto">
+            <label for="detail" class="col-md-4 col-form-label text-md-right">詳細内容</label>
+            <div class="col-md-5 mx-left">
                 <textarea name="detail" class="form-control" readonly rows="10">{{ $dividend_form->detail }}</textarea>
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label class="col-md-4 col-form-label text-md-right" for="image">画像</label>
+            <div class="form-text text-info col-md-5 mx-left">
+             設定中: {{ $dividend_form->image_path }}
             </div>
         </div>
     </div>

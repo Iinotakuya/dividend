@@ -126,11 +126,11 @@ class DividendController extends Controller
             abort(404);
         }
         
-        return view('admin/dividend/edit',['dividend' => $dividend]);
+        return view('admin.dividend.edit',['dividend_form' => $dividend]);
     }
     
     public function update(Request $request)
-  {
+    {
         // Validationをかける
         $this->validate($request, Dividend::$rules);
         // Dividend Modelからデータを取得する
@@ -151,8 +151,8 @@ class DividendController extends Controller
       unset($dividend_form['_token']);
       // 該当するデータを上書きして保存する
       $dividend->fill($dividend_form)->save();
-      return redirect('admin/dividend/edit',['dividend' => $dividend]);
-  }
+      return redirect('admin/dividend/edit',['dividend_form' => $dividend]);
+    }
     
     //投稿データ削除
     public function delete(Request $request)
