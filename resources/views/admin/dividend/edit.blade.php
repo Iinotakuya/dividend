@@ -82,7 +82,9 @@
                     <div class="col-md-9 mx-auto">
                         <input type="file" class="form-control-file" name="image">
                         <div class="form-text text-info">
-                            設定中: {{ $dividend_form->image_path }}
+                            @if ($dividend_form->image_path)
+                            <img src="{{ asset('storage/image/' . $dividend_form->image_path) }}">
+                            @endif
                         </div>
                         <div class="form-check">
                             <label class="form-check-label">

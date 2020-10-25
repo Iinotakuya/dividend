@@ -2,7 +2,7 @@
 @extends('layouts.admin')
 
 {{-- admin.blade.phpの@yield('title')に'新規投稿を行う'を埋め込む --}}
-@section('title', '配当金情報サイト')
+@section('title', 'マイページ')
 
 {{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')

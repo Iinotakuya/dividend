@@ -90,7 +90,7 @@
                 </div>
             </div>
             
-            <h1 style="text-align:center">配当金情報サイト</h1>
+            <h1 style="text-align:center">配当金・優待情報サイト</h1>
             
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
