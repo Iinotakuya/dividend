@@ -97,8 +97,8 @@
                             @foreach($posts as $dividend)
                                 <tr>
                                     <th><a href="{{ action('Admin\DividendController@show', ['id' => $dividend->id]) }}">{{ $dividend->company }}</a></th>
-                                    <td>{{ \Str::limit($dividend->Industry, 100) }}</td>
-                                    <td>{{ \Str::limit($dividend->detail, 250) }}</td>
+                                    <td>{{ \Str::limit($dividend->Industry, 30) }}</td>
+                                    <td>{{ \Str::limit($dividend->detail, 60) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

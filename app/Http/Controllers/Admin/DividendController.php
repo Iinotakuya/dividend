@@ -151,7 +151,7 @@ class DividendController extends Controller
       unset($dividend_form['_token']);
       // 該当するデータを上書きして保存する
       $dividend->fill($dividend_form)->save();
-      return redirect('admin/dividend/edit',['dividend_form' => $dividend]);
+      return redirect('admin/dividend/mypage/1');
     }
     
     //投稿データ削除
