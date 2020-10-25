@@ -5,6 +5,10 @@ body {
   color: #000;
 }
 
+.white {
+  background-color:white;
+}
+
 .button_create {
   text-align: center;
 }

@@ -48,7 +48,10 @@
                         <ul class="navbar-nav ml-auto">
                             {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                         @guest
-                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                            <div class="white">
+                                <a style="display:inline-block;margin-right:20px" href="{{ route('register') }}">ユーザー登録(無料)</a>
+                                <a href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                            </div>
                         {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
                         @else
                             <li class="nav-item dropdown">
@@ -79,11 +82,6 @@
             </nav>
             {{-- ここまでナビゲーションバー --}}
             <div class="container">
-                @guest
-                <div class="row">
-                    <a href="{{ route('register') }}">ユーザー登録</a>
-                </div>
-                @endguest
                 <div class="row">
                     <a href="{{ route('TOP') }}">TOP</a>
                     <a href="{{ route('create') }}">投稿画面</a>
