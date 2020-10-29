@@ -15,6 +15,7 @@ class CreateDividendTable extends Migration
     {
         Schema::create('dividend', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('user_id');
             $table->string('company'); // 会社名・銘柄コードを保存するカラム
             $table->string('Industry');  // 業種を保存するカラム
             $table->string('detail');  // 詳細を保存するカラム

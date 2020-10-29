@@ -29,67 +29,70 @@
     <body>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
-            <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
-                <div class="container">
-                    {{-- <a class="navbar-brand" href="{{ url('/') }}"> --}}
-                    {{--    {{ config('app.name', 'Laravel') }} --}}
-                    {{--</a> --}}
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-
-                        </ul>
-
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
-                            {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
-                        @guest
-                            <div class="white">
+            <div class="white">
+                <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+                    <div class="container">
+                        {{-- <a class="navbar-brand" href="{{ url('/') }}"> --}}
+                        {{--    {{ config('app.name', 'Laravel') }} --}}
+                        {{--</a> --}}
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+    
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <!-- Left Side Of Navbar -->
+                            <ul class="navbar-nav mr-auto">
+    
+                            </ul>
+    
+                            <!-- Right Side Of Navbar -->
+                            <ul class="navbar-nav ml-auto">
+                                {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
+                            @guest
                                 <a style="display:inline-block;margin-right:20px" href="{{ route('register') }}">ユーザー登録(無料)</a>
                                 <a href="{{ route('login') }}">{{ __('ログイン') }}</a>
-                            </div>
-                        {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('mypage', auth()->user()->id) }}">
-                                        {{ __('マイページ') }}
+                            {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        <div class="black">
+                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                        </div>
                                     </a>
-                                    
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('ログアウト') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                        </ul>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('mypage', auth()->user()->id) }}">
+                                            {{ __('マイページ') }}
+                                        </a>
+                                        
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                            {{ __('ログアウト') }}
+                                        </a>
+    
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            
+                            @endguest
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
+            </div>
             {{-- ここまでナビゲーションバー --}}
             <div class="container">
                 <div class="row">
-                    <a href="{{ route('TOP') }}">TOP</a>
-                    <a href="{{ route('create') }}">投稿画面</a>
+                <div class="top">
+                <a href="{{ route('TOP') }}">配当金・優待情報サイト</a>
+                
+                <a href="{{ route('create') }}">投稿画面</a>
+                </div>
                 </div>
             </div>
-            
-            <h1 style="text-align:center">配当金・優待情報サイト</h1>
-            
+        
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
                 @yield('content')
