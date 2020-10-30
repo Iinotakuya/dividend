@@ -138,7 +138,6 @@ return [
         
         Kyslik\ColumnSortable\ColumnSortableServiceProvider::class, //追加
 
-    ],
 
         /*
          * Laravel Framework Service Providers...
@@ -178,6 +177,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        
+    ],
 
     /*
     |--------------------------------------------------------------------------
