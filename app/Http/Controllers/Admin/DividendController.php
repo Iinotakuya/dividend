@@ -27,7 +27,7 @@ class DividendController extends Controller
     //$posts = Dividend::orderBy('id','desc')->paginate(5);
     //$posts = Dividend::sortable()->paginate(5);
 
-        return view('admin.dividend.welcome', ['posts' => $posts]);
+        return view('admin.dividend.index', ['posts' => $posts]);
     } 
   
     //新規作成画面を表示するメソッド
