@@ -94,13 +94,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($posts as $dividend)
+                            @foreach($posts as $dividend)
                                 <tr>
                                     <th><a href="{{ action('Admin\DividendController@show', ['id' => $dividend->id]) }}">{{ $dividend->company }}</a></th>
                                     <td>{{ \Str::limit($dividend->Industry, 30) }}</td>
                                     <td>{{ \Str::limit($dividend->detail, 60) }}</td>
                                 </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                     {{-- ページネーション --}}
