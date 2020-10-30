@@ -17,11 +17,9 @@ class DividendController extends Controller
     
     //$user = User::all();
     //dd($user);
-
     //return response()->json([
     //    'user' => $user
     //]);
-    
     
     // すべてのデータを取得.降順に並び替え.ページネーション
     $posts = Dividend::orderBy('id','desc')->paginate(5);
