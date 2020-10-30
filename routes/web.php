@@ -11,12 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 
-Route::get('', 'Admin\DividendController@index')->name('TOP');
+Route::get('/', 'Admin\DividendController@index')->name('TOP');
 Route::get('/dividend/indexlist', 'Admin\DividendController@indexlist');
 Route::post('/dividend/indexlist', 'Admin\DividendController@indexlist');
 Route::get('/dividend/category', 'Admin\DividendController@category');
@@ -40,6 +40,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+//Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
