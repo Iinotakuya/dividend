@@ -24,7 +24,7 @@ class DividendController extends Controller
     
     
     // すべてのデータを取得.降順に並び替え.ページネーション
-    $posts = Dividend::orderBy('id','desc')->paginate(5);
+    //$posts = Dividend::orderBy('id','desc')->paginate(5);
     //$posts = Dividend::sortable()->paginate(5);
 
         return view('admin.dividend.welcome', ['posts' => $posts]);
