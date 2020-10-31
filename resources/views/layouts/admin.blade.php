@@ -50,7 +50,8 @@
                                 {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                             @guest
                                 <a style="display:inline-block;margin-right:20px" href="{{ route('register') }}">ユーザー登録(無料)</a>
-                                <a href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                                <a style="display:inline-block;margin-right:20px" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                                <a href="{{ route('create') }}">投稿画面</a>
                             {{-- ログインしていたらユーザー名とログアウトボタンを表示 --}}
                             @else
                                 <li class="nav-item dropdown">
@@ -67,8 +68,18 @@
                                                          document.getElementById('logout-form').submit();">
                                             {{ __('ログアウト') }}
                                         </a>
-    
+                                        
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                        
+                                        <a class="dropdown-item" href="{{ route('create') }}"
+                                           onclick="event.preventDefault();
+                                                         document.getElementById('create-form').submit();">
+                                            {{ __('新規投稿') }}
+                                        </a>
+    
+                                        <form id="create-form" action="{{ route('create') }}" method="POST" style="display: none;">
                                             @csrf
                                         </form>
                                     </div>
