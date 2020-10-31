@@ -1,17 +1,11 @@
 body {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #a5dee4;
-  color: #000;
+  background-color: #EDF9F7;
 }
 
 .white {
   background-color:white;
-}
-
-.top {
-  text-align:center;
-  font-size: 200%;
 }
 
 .button_create {
