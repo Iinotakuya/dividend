@@ -30,8 +30,7 @@
             @if ($dividend_form->image_path)
                 <label class="col-md-4 col-form-label text-md-right" for="image">画像</label>
                 <div class="form-text text-info col-md-5 mx-left">
-                    <img src="{{ $headline->image_path }}">
-                    {{-- <img src="{{ asset('storage/image/' . $dividend_form->image_path) }}"> --}}
+                    <img src="{{ $dividend_form->image_path }}">
                 </div>
             @endif
         </div>
