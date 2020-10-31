@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Dividend;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Storage;
 
 class DividendController extends Controller
 {
@@ -47,8 +48,8 @@ class DividendController extends Controller
         
     // フォームから画像が送信されてきたら、保存して、$dividend->image_path に画像のパスを保存する
     if (isset($form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $dividend->image_path = basename($path);
+        $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+        $dividend->image_path = Storage::disk('s3')->url($path);
     } else {
         $dividend->image_path = null;
     }
@@ -138,8 +139,8 @@ class DividendController extends Controller
         if ($request->remove == 'true') {
             $dividend_form['image_path'] = null;
     } elseif ($request->file('image')) {
-            $path = $request->file('image')->store('public/image');
-            $dividend_form['image_path'] = basename($path);
+            $path = Storage::disk('s3')->putFile('/',$form['image'],'public');
+            $dividend_form['image_path'] = Storage::disk('s3')->url($path);
     } else {
             $dividend_form['image_path'] = $dividend->image_path;
     }
