@@ -83,12 +83,11 @@
             {{-- ここまでナビゲーションバー --}}
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 text-center">
-                        <a style="font-size:1.5rem" href="{{ route('TOP') }}">配当金・優待情報サイト</a>
-                    </div>
-                
                     <div class= "col-md-12 text-right">
                         <a href="{{ route('create') }}">投稿画面</a>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <a style="font-size:2rem" href="{{ route('TOP') }}">配当金・優待情報サイト</a>
                     </div>
                 </div>
         
