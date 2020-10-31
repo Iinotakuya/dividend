@@ -8,19 +8,25 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-2 mx-auto">
+            <div class="col-md-12 text-center">
                 <h2>銘柄検索</h2>
             </div>
         </div>
-        <form class="form-inline" action="{{ action('Admin\DividendController@indexlist') }}" method="post" enctype="multipart/form-data">
-            <div class="form-group mx-sm-6 mb-2">
-                <input type="text" class="form-control" name="dividend_title"  size="130"  placeholder="会社名・銘柄コード">
-            </div>
-                {{ csrf_field() }}
-                <button type="submit" class="btn btn-primary mb-2">検索</button>
-        </form>
+        
         <div class="row">
-            <div class="col-md-2 mx-auto">
+            <form class="form-inline" style="width:100%" action="{{ action('Admin\DividendController@indexlist') }}" method="post" enctype="multipart/form-data">
+                <div class="form-group col-md-12 center-block">
+                    <div style="width:25rem" class="mx-auto">
+                        <input type="text" class="form-control" name="dividend_title"  size="35"  placeholder="会社名・銘柄コード">
+                        <button type="submit" class="btn btn-primary">検索</button>
+                        {{ csrf_field() }}
+                    </div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="row" style="margin-top: 1rem;">
+            <div class="col-md-12 text-center">
                 <h2>業種検索</h2>
             </div>
         </div>
@@ -77,8 +83,8 @@
             <a href="{{ action('Admin\DividendController@category', ['dividend_category' => "REIT"]) }}"　class="btn btn-outline-dark col-md-4 mx-auto">REIT</a>
             <a href="{{ action('Admin\DividendController@category', ['dividend_category' => "その他"]) }}"　class="btn btn-outline-dark col-md-4 mx-auto">その他</a>
         </div>
-        <div class="row">
-            <div class="col-md-2 mx-auto">
+        <div class="row" style="margin-top: 1rem;">
+            <div class="col-md-12 text-center">
                 <h2>新着投稿</h2>
             </div>
         </div>

@@ -30,7 +30,7 @@
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
             <div class="white">
-                <nav class="navbar navbar-expand-md navbar-dark navbar-laravel">
+                <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                     <div class="container">
                         {{-- <a class="navbar-brand" href="{{ url('/') }}"> --}}
                         {{--    {{ config('app.name', 'Laravel') }} --}}
@@ -55,9 +55,7 @@
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        <div class="black">
                                             {{ Auth::user()->name }} <span class="caret"></span>
-                                        </div>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="dropdown-item" href="{{ route('mypage', auth()->user()->id) }}">
@@ -85,13 +83,14 @@
             {{-- ここまでナビゲーションバー --}}
             <div class="container">
                 <div class="row">
-                <div class="top">
-                <a href="{{ route('TOP') }}">配当金・優待情報サイト</a>
+                    <div class="col-md-12 text-center">
+                        <a style="font-size:1.5rem" href="{{ route('TOP') }}">配当金・優待情報サイト</a>
+                    </div>
                 
-                <a href="{{ route('create') }}">投稿画面</a>
+                    <div class= "col-md-12 text-right">
+                        <a href="{{ route('create') }}">投稿画面</a>
+                    </div>
                 </div>
-                </div>
-            </div>
         
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
