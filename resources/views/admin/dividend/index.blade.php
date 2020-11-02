@@ -34,6 +34,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="row">
             <div class="col-md-12">
                 <a href="{{ action('Admin\DividendController@category', ['dividend_category' => "水産・農林業"]) }}" class="btn btn-outline-dark col-md-3 mx-auto">水産・農林業</a><a href="{{ action('Admin\DividendController@category', ['dividend_category' => "鉱業"]) }}" class="btn btn-outline-dark col-md-3 mx-auto">鉱業</a><a href="{{ action('Admin\DividendController@category', ['dividend_category' => "建設業"]) }}" class="btn btn-outline-dark col-md-3 mx-auto">建設業</a><a href="{{ action('Admin\DividendController@category', ['dividend_category' => "食料品"]) }}" class="btn btn-outline-dark col-md-3 mx-auto">食料品</a>
@@ -87,6 +88,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="row">
             <div class="list-dividend col-md-12 mx-auto">
                     <table class="table table-white">
