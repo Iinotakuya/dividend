@@ -9,7 +9,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-10 mx-auto">
+            <div class="col-md-8 mx-auto">
                 <h3>新規投稿</h3>
                 <form action="{{ action('Admin\DividendController@create') }}" method="post" enctype="multipart/form-data">
                     
